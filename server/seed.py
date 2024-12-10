@@ -12,9 +12,9 @@ if "Duane" not in usernames:
     usernames.append("Duane")
 
 def make_messages():
-    print("Running make_messages...")  # Debugging print
+    print("Running make_messages...")
     Message.query.delete()
-    print("Deleted existing messages.")  # Debugging print
+    print("Deleted existing messages.")
 
     messages = []
 
@@ -25,14 +25,14 @@ def make_messages():
         )
         messages.append(message)
 
-    print(f"Prepared {len(messages)} messages.")  # Debugging print
+    print(f"Prepared {len(messages)} messages.")
     db.session.add_all(messages)
     db.session.commit()
-    print("Messages committed to the database.")  # Debugging print
+    print("Messages committed to the database.")
 
 if __name__ == '__main__':
     with app.app_context():
-        print("App context initialized.")  # Debugging print
+        print("App context initialized.")
         make_messages()
 
 
